@@ -41,7 +41,7 @@
         
         $.extend($scope, formObj);
 
-       $http.get('js/data.json')
+       $http.get('scripts/data.json')
             .then(function(res){
                 angular.forEach(res.data, function(value, key){
                     $scope[key] = value;
