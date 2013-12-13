@@ -194,28 +194,71 @@
                     data-placeholder="Track files">
                 </select>
             </div>
-            <legend>Surface Placeables</legend>
             <div class="form-group">
-                <label class="control-label">Items:</label>
-                <input type="text" class="form-control"ng-model="form.surfaceParameters.items" placeholder="Items array" disabled/>
+                <label class="control-label">Surface Placeable Items:</label>
+                <input type="text" class="form-control"ng-model="form.surfaceParameters.surfacePlaceables.items" placeholder="Items array" disabled/>
             </div>
-            <legend>Status Parameters</legend>
             <div class="form-group">
                 <label class="control-label">Temperature Bounds:</label>
-                <input type="text" class="form-control"ng-model="form.surfaceParameters.temperatureBounds" placeholder="Range"/>
+                <input type="text" class="form-control"ng-model="form.surfaceParameters.statusParameters.temperatureBounds" placeholder="Range"/>
             </div>
             <div class="form-group">
                 <label class="control-label">Day / Night Temperature Variability:</label>
-                <input type="text" class="form-control"ng-model="form.surfaceParameters.dayNightTemperatureVariability" placeholder="Int"/>
+                <input type="text" class="form-control"ng-model="form.surfaceParameters.statusParameters.dayNightTemperatureVariability" placeholder="Int"/>
             </div>
             <div class="form-group">
                 <label class="control-label">temperatureVariability:</label>
-                <input type="text" class="form-control"ng-model="form.surfaceParameters.temperatureVariability" placeholder="Int"/>
+                <input type="text" class="form-control"ng-model="form.surfaceParameters.statusParameters.temperatureVariability" placeholder="Int"/>
             </div>
-            <legend>Underground Placeables</legend>
             <div class="form-group">
-                <label class="control-label">Items:</label>
-                <input type="text" class="form-control"ng-model="form.surfaceParameters.items" placeholder="Items array"/>
+                <label class="control-label">Underground Placeable Items:</label>
+                <input type="text" class="form-control"ng-model="form.surfaceParameters.undergroundPlaceables.items" placeholder="Items array"/>
+            </div>
+            <legend>Subsurface Parameters</legend>
+            <div class="form-group">
+                <label class="control-label">Main Block:</label>
+                <select ng-model="form.subSurfaceParameters.mainBlock"
+                        class="form-control"
+                        chosen
+                        ng-options="block for block in blocks"
+                        data-placeholder="Select block">
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Sub Blocks:</label>
+                <select ng-model="form.subSurfaceParameters.subBlocks"
+                        class="form-control"
+                        chosen
+                        multiple
+                        ng-options="block for block in blocks"
+                        data-placeholder="Select block">
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Ores:</label>
+                <select ng-model="form.subSurfaceParameters.ores"
+                        class="form-control"
+                        chosen
+                        ng-options="ore for ore in ores"
+                        data-placeholder="Select ore">
+                </select>
+            </select>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Underground Placeable Items:</label>
+                <input type="text" class="form-control"ng-model="form.subSurfaceParameters.undergroundPlaceables.items" placeholder="Items array" disabled/>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Temperature Bounds:</label>
+                <input type="text" class="form-control"ng-model="form.subSurfaceParameters.statusParameters.temperatureBounds" placeholder="Range"/>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Day / Night Temperature Variability:</label>
+                <input type="text" class="form-control"ng-model="form.subSurfaceParameters.statusParameters.dayNightTemperatureVariability" placeholder="Int"/>
+            </div>
+            <div class="form-group">
+                <label class="control-label">temperatureVariability:</label>
+                <input type="text" class="form-control"ng-model="form.subSurfaceParameters.statusParameters.temperatureVariability" placeholder="Int"/>
             </div>
             <div class="col-sm-12">
                 <button type="button"
