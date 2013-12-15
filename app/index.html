@@ -58,11 +58,17 @@
             </div>
             <div class="form-group">
                 <label class="control-label">Hue Shift Options:</label>
-                <input type="text" class="form-control"ng-model="form.hueShiftOptions" placeholder="Biome Name"/>
+                <input type="text"
+                        class="form-control"
+                        ng-model="form.hueShiftOptions"
+                        placeholder="Array(int). Ex: [1,2,3]"/>
             </div>
             <div class="form-group">
                 <label class="control-label">Sky Options:</label>
-                <input type="text" class="form-control"ng-model="form.skyOptions" placeholder="Biome Name"/>
+                <input type="text"
+                        class="form-control"
+                        ng-model="form.skyOptions"
+                        placeholder="Array(skyOption)"/>
             </div>
             <legend>Surface Parameters:</legend>
             <div class="form-group">
@@ -108,13 +114,24 @@
                         ng-model="form.surfaceParameters.undergroundParallax"
                         disabled/>
             </div>
+            <legend>Weather</legend>
             <div class="form-group">
-                <label class="control-label">Weather:</label>
+                <label class="control-label">Type:</label>
+                <select ng-model="form.surfaceParameters.weather.type"
+                    class="form-control"
+                    chosen
+                    ng-options="weather for weather in weatherTypes"
+                    data-placeholder="Weather type">
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Severity Bounds:</label>
                 <input type="text"
                         class="form-control"
-                        ng-model="form.surfaceParameters.weather"
-                        placeholder="Array of weather types"/>
+                        ng-model="form.surfaceParameters.weather.severityBounds"
+                        placeholder="Array(int).  Ex: [1, 2, 3]"/>
             </div>
+            <legend>Sound</legend>
             <div class="form-group">
                 <label class="control-label">Ambient Noises(Day::</label>
                 <select ng-model="form.surfaceParameters.ambientNoises.day.tracks"
