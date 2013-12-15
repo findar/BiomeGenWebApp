@@ -1,0 +1,10 @@
+data.json locations
+
+blocks 		:   /tiles/materials, grep for "materialName"
+liquids 	:	/liquids.config, grep for "name"
+treasure	:	/treasure/default.treasurechests, have to parse object for primary keys
+ores 		:	/biomes/oredistributions.configfunctions, have to parse object for primary keys
+dungeons	:	/dungeons/microdungeons, grep against .dungeon files for "name"
+tracks		:	/music, just do ls *.ogg
+surfacebiomes:	/biomes/surface_detached, grep for .surfacebiome files and look for "name"
+subsurfacebiomes: /biomes/underground_detached, grep for .undergroundbiome and look for "name"
