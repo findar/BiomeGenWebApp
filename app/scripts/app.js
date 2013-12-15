@@ -31,7 +31,10 @@
         
         var formObj = { 
             "form": {
-                "name": "Test_Biome_Please_Ignore"
+                "name": "Test_Biome_Please_Ignore",
+                "surfaceParameters" : {
+                    "weather" : []
+                }
             }
         };
 
@@ -52,7 +55,18 @@
             this.surfaceBiomeFile = this.form.name + ".surfacebiome";
             this.form.surfaceParameters.parallax = this.form.name + ".parallax";
             this.form.surfaceParameters.undergroundParallax = this.form.name + ".undergroundParallax";
-        }
+        };
+
+        $scope.addWeather = function() {
+            var newWeather      = {},
+                weatherName     = $("#newWeatherName")[0],
+                weatherBounds   = $("#newWeatherBounds")[0];
+
+            newWeather.type = weatherName.value;
+            newWeather.severityBounds = weatherBounds.value;
+            this.form.surfaceParameters.weather.push(newWeather);
+
+        };
         
         $scope.updateParallax();
     });
