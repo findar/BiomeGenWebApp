@@ -4,7 +4,8 @@
     <head>
         <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="styles/chosen.min.css">
-        <link rel="stylesheet" href="styles/chosen-bootstrap.css">        
+        <link rel="stylesheet" href="styles/chosen-bootstrap.css">    
+        <link rel="stylesheet" href="styles/main.css">        
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.4/angular.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
@@ -265,11 +266,12 @@
                         class="btn btn-primary"
                         ng-click="downloadObj(surfaceBiomeFile, form)">Download {{surfaceBiomeFile}}</button>
             </div>
-            <div class="form-group">
-                <label class="control-label">Items:</label>
-                <textarea class="form-control" rows="10" disabled>{{form | json}}</textarea>
-            </div>
         </form>
+        <div class="col-sm-8 col-sm-offset-2 bottomBuffer">
+            <label class="control-label">Additional Customization:</label>
+            <div class="helpText">Note: Edit this area only once you have finished using the form.  Once you change it you will not be able to modify it via the form. </div>
+            <textarea class="form-control" rows="10">{{form | json}}</textarea>
+        </div>
     </body>
 </html>
 
