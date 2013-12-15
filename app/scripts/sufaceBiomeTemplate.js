@@ -59,7 +59,7 @@ item = {
 		"ores": string,
 		"parallax": fileName,
 		"undergroundParallax": fileName,
-		"weather": array(weather),
+		"weather": array(weather), //Length 1 every time it appears
 		"ambientNoises":{
 			"day":{
 				"tracks": array(path)

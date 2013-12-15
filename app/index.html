@@ -65,10 +65,12 @@
             </div>
             <div class="form-group">
                 <label class="control-label">Sky Options:</label>
-                <input type="text"
+                <select ng-model="form.skyOptions"
                         class="form-control"
-                        ng-model="form.skyOptions"
-                        placeholder="Array(skyOption)"/>
+                        chosen
+                        ng-options="skyOption for skyOption in skyOptions"
+                        data-placeholder="Click add to add a new Sky Option">
+                </select>
             </div>
             <legend>Surface Parameters:</legend>
             <div class="form-group">
