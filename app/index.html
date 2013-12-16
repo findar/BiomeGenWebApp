@@ -66,12 +66,9 @@
             </div>
             <div class="form-group">
                 <label class="control-label">Sky Options:</label>
-                <select ng-model="form.skyOptions"
-                        class="form-control"
-                        chosen
-                        ng-options="skyOption for skyOption in skyOptions"
-                        data-placeholder="Click add to add a new Sky Option">
-                </select>
+                <button type="button"
+                        class="btn btn-default"
+                        ng-click="showSkyOptionsModal()">Add Sky Option</button>
             </div>
             <legend>Surface Parameters:</legend>
             <div class="form-group">
@@ -288,12 +285,72 @@
                 <input type="text"
                         class="form-control"
                         id="newWeatherName"/>
+            </div>
+            <div class="form-group">
                 <label>Severity Bounds</label>
                 <input type="number"
                         class="form-control"
                         id="newWeatherBounds"/>
             </div>
         </script>
+
+        <script id="newSkyOptionTemplate" type="text">
+            <div class="form-group">
+                <label>Main Color:</label>
+                <input type="text"
+                        class="form-control"
+                        id="newWeatherName"/>
+            </div>
+            <div class="form-group">
+                <label>Morning Colors:</label>
+                <input type="text"
+                        class="form-control"
+                        id="newWeatherName"/>
+            </div>
+            <div class="form-group">
+                <label>Day Colors:</label>
+                <input type="text"
+                        class="form-control"
+                        id="newWeatherName"/>
+            </div>
+            <div class="form-group">
+                <label>Evening Colors:</label>
+                <input type="text"
+                        class="form-control"
+                        id="newWeatherName"/>
+            </div>
+            <div class="form-group">
+                <label>Night Colors:</label>
+                <input type="text"
+                        class="form-control"
+                        id="newWeatherName"/>
+            </div>
+            <div class="form-group">
+                <label>Morning Light Color:</label>
+                <input type="text"
+                        class="form-control"
+                        id="newWeatherName"/>
+            </div>
+            <div class="form-group">
+                <label>Day Light Color:</label>
+                <input type="text"
+                        class="form-control"
+                        id="newWeatherName"/>
+            </div>
+            <div class="form-group">
+                <label>Evening Light Color:</label>
+                <input type="text"
+                        class="form-control"
+                        id="newWeatherName"/>
+            </div>
+            <div class="form-group">
+                <label>Night Light Color:</label>
+                <input type="text"
+                        class="form-control"
+                        id="newWeatherName"/>
+            </div>
+        </script>
+
         <div class="modal fade"
                 id="{{template.name}}ModalContainer"
                 tabindex="-1"

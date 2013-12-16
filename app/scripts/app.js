@@ -33,6 +33,16 @@
             $scope.form.surfaceParameters.undergroundParallax = $scope.form.name + ".undergroundParallax";
         };
 
+        //TODO: Move this to an attribute directive, ex: <button modal-target: id>Show</button>
+        //  Would call $(id).modal("show")
+        $scope.showWeatherModal = function() {
+            $("#" + $scope.templates.modal.weather.name + "ModalContainer").modal('show');
+        };
+
+        $scope.showSkyOptionsModal = function() {
+            $("#" + $scope.templates.modal.skyOption.name + "ModalContainer").modal('show');
+        };
+
         $scope.addWeather = function() {
             var newWeather      = {},
                 weatherName     = $(".modal #newWeatherName")[0],
@@ -44,18 +54,13 @@
             $("#" + $scope.templates.modal.weather.name + "ModalContainer").modal('hide');
         };
 
-        //TODO: Move this to an attribute directive, ex: <button modal-target: id>Show</button>
-        //  Would call $(id).modal("show")
-        $scope.showWeatherModal = function() {
-            $("#" + $scope.templates.modal.weather.name + "ModalContainer").modal('show');
-        };
-
         
         $scope.downloadObj = downloadObj;
         
         var formObj = { 
             "form": {
                 "name": "Test_Biome_Please_Ignore",
+                "skyOptions" : [],
                 "surfaceParameters" : {
                     "weather" : []
                 }
@@ -67,6 +72,12 @@
                         "content" : $("#newWeatherTemplate").html(),
                         "clickCancel" : "",
                         "clickAdd" : $scope.addWeather
+                    },
+                    "skyOption" : {
+                        "name" : "skyOption",
+                        "content" : $("#newSkyOptionTemplate").html(),
+                        "clickCancel" : "",
+                        "clickAdd" : $scope.addSkyOption
                     }
                 }
             }
