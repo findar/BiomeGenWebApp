@@ -43,7 +43,7 @@ function getBiome(req, res) {
 
     client.get(id, function (err, reply) {
         if (err) {
-            res.send("{'error': 'not found'");
+            res.send("{'error': 'not found'}");
         } else {
             res.send(atob(reply.toString()));
         }
