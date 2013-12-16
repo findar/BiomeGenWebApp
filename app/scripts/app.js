@@ -26,6 +26,30 @@
     }
     
     app.controller('initData', function($scope, $http) {
+
+        $scope.updateParallax = function() {
+            $scope.surfaceBiomeFile = $scope.form.name + ".surfacebiome";
+            $scope.form.surfaceParameters.parallax = $scope.form.name + ".parallax";
+            $scope.form.surfaceParameters.undergroundParallax = $scope.form.name + ".undergroundParallax";
+        };
+
+        $scope.addWeather = function() {
+            var newWeather      = {},
+                weatherName     = $(".modal #newWeatherName")[0],
+                weatherBounds   = $(".modal #newWeatherBounds")[0];
+
+            newWeather.type = weatherName.value;
+            newWeather.severityBounds = Number(weatherBounds.value);
+            $scope.form.surfaceParameters.weather.push(newWeather);
+            $("#" + $scope.templates.modal.weather.name + "ModalContainer").modal('hide');
+        };
+
+        //TODO: Move this to an attribute directive, ex: <button modal-target: id>Show</button>
+        //  Would call $(id).modal("show")
+        $scope.showWeatherModal = function() {
+            $("#" + $scope.templates.modal.weather.name + "ModalContainer").modal('show');
+        };
+
         
         $scope.downloadObj = downloadObj;
         
@@ -34,6 +58,16 @@
                 "name": "Test_Biome_Please_Ignore",
                 "surfaceParameters" : {
                     "weather" : []
+                }
+            },
+            "templates" : {
+                "modal" : {
+                    "weather" : {
+                        "name" : "weather",
+                        "content" : $("#newWeatherTemplate").html(),
+                        "clickCancel" : "",
+                        "clickAdd" : $scope.addWeather
+                    }
                 }
             }
         };
@@ -50,31 +84,14 @@
                     $scope[key] = value;
                 });
             });
-        
-        $scope.updateParallax = function() {
-            this.surfaceBiomeFile = this.form.name + ".surfacebiome";
-            this.form.surfaceParameters.parallax = this.form.name + ".parallax";
-            this.form.surfaceParameters.undergroundParallax = this.form.name + ".undergroundParallax";
-        };
 
-        $scope.addWeather = function() {
-            var newWeather      = {},
-                weatherName     = $("#newWeatherName")[0],
-                weatherBounds   = $("#newWeatherBounds")[0];
-
-            newWeather.type = weatherName.value;
-            newWeather.severityBounds = weatherBounds.value;
-            this.form.surfaceParameters.weather.push(newWeather);
-
-        };
-        
         $scope.updateParallax();
     });
-    
-    app.filter('append', function() {
-      return function(input, stringToAppend) {
-        return input + stringToAppend;
-      };
+
+    app.filter('trustAsHtml', function($sce) {
+        return function(val) {
+            return $sce.trustAsHtml(val);
+        };
     });
     
 })();
