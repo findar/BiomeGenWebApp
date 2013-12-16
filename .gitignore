@@ -1,5 +1,23 @@
+########################
+# package management
+########################
 node_modules
+app/bower_components
+
+########################
+# build
+########################
 dist
 .tmp
 .sass-cache
-app/bower_components
+
+########################
+# misc / editors
+########################
+*~
+*#
+.DS_STORE
+.netbeans
+nbproject
+.idea
+*.iml
