@@ -1,7 +1,7 @@
 (function() {
     'use strict';
     
-    var app = angular.module('biomeGenerator', ['ng-chosen']);
+    var app = angular.module('biomeGenerator', ['ng-chosen', 'bs-directives']);
 
     function addKeyToObj(obj, newProp) {
         var path = newProp.split(".");
@@ -104,5 +104,5 @@
             return $sce.trustAsHtml(val);
         };
     });
-    
+
 })();
