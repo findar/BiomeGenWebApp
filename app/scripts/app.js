@@ -1,7 +1,7 @@
 (function() {
     'use strict';
     
-    var app = angular.module('biomeGenerator', ['ng-chosen', 'bs-directives']);
+    var app = angular.module('biomeGenerator', ['ng-chosen', 'colorpicker.module', 'bs-directives']);
 
     function addKeyToObj(obj, newProp) {
         var path = newProp.split(".");

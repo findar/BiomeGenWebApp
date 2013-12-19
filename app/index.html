@@ -6,12 +6,14 @@
         <link rel="stylesheet" href="styles/chosen.min.css">
         <link rel="stylesheet" href="styles/chosen-bootstrap.css">
         <link rel="stylesheet" href="styles/main.css">
+        <link rel="stylesheet" href="styles/colorpicker.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.4/angular.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
         <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
         <script src="scripts/ng-chosen.js"></script>
         <script src="scripts/chosen.jquery.min.js"></script>
+        <script src="scripts/colorpicker.module.js"></script>
         <script src="scripts/bs-directives.js"></script>
         <script src="scripts/app.js"></script>
         <title>Starbound Biome Generator</title>
@@ -25,6 +27,7 @@
             <div class="form-group">
                 <label class="control-label">Name:</label>
                 <input type="text"
+                        colorpicker
                         class="form-control"
                         ng-model="form.name"
                         placeholder="Biome Name"
@@ -302,18 +305,21 @@
             <div class="form-group">
                 <label>Main Color:</label>
                 <input type="text"
+                        colorpicker
                         class="form-control"
                         id="newWeatherName"/>
             </div>
             <div class="form-group">
                 <label>Morning Colors:</label>
                 <input type="text"
+                        colorpicker
                         class="form-control"
                         id="newWeatherName"/>
             </div>
             <div class="form-group">
                 <label>Day Colors:</label>
                 <input type="text"
+                        colorpicker
                         class="form-control"
                         id="newWeatherName"/>
             </div>
